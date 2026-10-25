@@ -37,17 +37,26 @@ def make_bundle(output):
             raise ValueError('Expected evaluation of the original 240 validation rows')
         if filename == 'diagnostic_replay.json' and (report.get('source_sha256') != DEVELOPMENT_SHA256 or report.get('frames') != 451):
             raise ValueError('Expected the reviewed 451-frame development capture')
-    sources = [p for p in ROOT.glob('*.py')] + [ROOT / 'config.json', ROOT / 'README.md']
+    readme = ROOT.parent / 'README.md'
+    if not readme.is_file():
+        raise FileNotFoundError(f'Missing project README: {readme}')
+    sources = [p for p in ROOT.glob('*.py')] + [ROOT / 'config.json']
     for directory in ('data', 'models', 'reports', 'tests', 'diagnostic_inputs'):
         sources.extend(p for p in (ROOT / directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc')
+    entries = [(path, 'palm_v3/' + path.relative_to(ROOT).as_posix()) for path in sources]
+    entries.append((readme, 'README.md'))
+    # The packaged Git portability tests also need the project's newline rules.
+    attributes = ROOT.parent / '.gitattributes'
+    if attributes.is_file():
+        entries.append((attributes, '.gitattributes'))
     output = Path(output).expanduser().resolve()
     if output.exists():
         raise ValueError('Return ZIP already exists; choose a new --output filename')
     output.parent.mkdir(parents=True, exist_ok=True)
     try:
         with zipfile.ZipFile(output, 'x', compression=zipfile.ZIP_DEFLATED) as archive:
-            for path in sorted(sources):
-                archive.write(path, 'palm_v3/' + path.relative_to(ROOT).as_posix())
+            for path, archive_name in sorted(entries, key=lambda item: item[1]):
+                archive.write(path, archive_name)
         with zipfile.ZipFile(output) as archive:
             if archive.testzip() is not None:
                 raise ValueError('Return ZIP verification failed')

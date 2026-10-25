@@ -153,7 +153,8 @@ class PackagingTests(DataCase):
         self.root = Path(self.tmp.name) / 'palm_v3'; self.root.mkdir()
         shutil.copytree(ROOT / 'data', self.root / 'data')
         shutil.copy2(ROOT / 'config.json', self.root / 'config.json')
-        (self.root / 'README.md').write_text('test readme')
+        (self.root.parent / 'README.md').write_text('current project readme')
+        (self.root.parent / '.gitattributes').write_text('palm_v3/data/* -text\n')
         (self.root / 'app.py').write_text('test source')
         for name in ('models', 'reports', 'tests', 'diagnostic_inputs'):
             (self.root / name).mkdir()
@@ -176,12 +177,31 @@ class PackagingTests(DataCase):
         self.call_bundle()
         before = self.output.read_bytes()
         with zipfile.ZipFile(self.output) as archive:
-            self.assertTrue(all(n.startswith('palm_v3/') for n in archive.namelist()))
+            self.assertTrue(all(n in ('README.md', '.gitattributes') or n.startswith('palm_v3/') for n in archive.namelist()))
+            self.assertEqual(archive.read('README.md'), (self.root.parent / 'README.md').read_bytes())
+            self.assertEqual(archive.read('.gitattributes'), (self.root.parent / '.gitattributes').read_bytes())
+            self.assertNotIn('palm_v3/README.md', archive.namelist())
             self.assertEqual(archive.read('palm_v3/data/samples.csv'), (ROOT / 'data/samples.csv').read_bytes())
-            self.assertIn('palm_v3/models/gesture_mlp.pt', archive.namelist())
+            self.assertEqual(archive.read('palm_v3/models/gesture_mlp.pt'), b'fixture checkpoint')
+        self.assertEqual(file_sha256(self.root / 'models/gesture_mlp.pt'), self.digest)
+        self.assertEqual(file_sha256(self.root / 'data/samples.csv'), EXPECTED_DATA)
         with self.assertRaisesRegex(ValueError, 'already exists'):
             self.call_bundle()
         self.assertEqual(self.output.read_bytes(), before)
+
+    def test_root_readme_is_used_instead_of_a_legacy_duplicate(self):
+        (self.root / 'README.md').write_text('outdated duplicate')
+        self.call_bundle()
+        with zipfile.ZipFile(self.output) as archive:
+            self.assertEqual(archive.read('README.md'), b'current project readme')
+            self.assertNotIn('palm_v3/README.md', archive.namelist())
+
+    def test_missing_project_readme_fails_without_a_partial_archive(self):
+        (self.root.parent / 'README.md').unlink()
+        with self.assertRaisesRegex(FileNotFoundError, 'Missing project README'):
+            self.call_bundle()
+        self.assertFalse(self.output.exists())
+        self.assertEqual(file_sha256(self.root / 'models/gesture_mlp.pt'), self.digest)
 
     def test_stale_report_cannot_be_packaged_as_current_model(self):
         path = self.root / 'reports/diagnostic_replay.json'
