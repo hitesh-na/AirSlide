@@ -1,0 +1,13 @@
+{
+  "feature_version": "world_wrist_palm_v1",
+  "class_labels": [
+    "neutral",
+    "next",
+    "previous",
+    "blackout",
+    "start"
+  ],
+  "physical_hand": "right",
+  "input_orientation": "unflipped_camera",
+  "camera_index": 0
+}

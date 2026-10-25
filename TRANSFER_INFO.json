@@ -1,0 +1,126 @@
+{
+  "created_at_utc": "2026-10-23T01:22:35.104499+00:00",
+  "intended_training_device": "desktop CPU",
+  "dataset_sha256": "a10f2967aedcdcb37801aded40a3504151a8b447e1f937f72ff72e96f8f00d6d",
+  "total_rows": 1500,
+  "physical_hand": "right",
+  "split_sessions": {
+    "train": [
+      "s01",
+      "s02",
+      "s03"
+    ],
+    "validation": [
+      "s04"
+    ],
+    "test": [
+      "s05"
+    ]
+  },
+  "files": {
+    "model.py": {
+      "sha256": "94371b2c210882c042d9f2b696f23c1be48dcaf33b1480340d807e33b6052e47",
+      "bytes": 1666
+    },
+    "train.py": {
+      "sha256": "d4950a451a5c5a0aa373815cf928c59b5fd50c4ae5a6abb4a5018da715f2c646",
+      "bytes": 8694
+    },
+    "evaluate.py": {
+      "sha256": "4acccf0dac76745ba813c4206371f65ad4d0401ae4232fcee63a0caa6e057569",
+      "bytes": 5173
+    },
+    "training_utils.py": {
+      "sha256": "5c035c9e064a6943c69282911f4ae7bee1377a0407f292e26b5e11abac33849e",
+      "bytes": 4766
+    },
+    "reporting.py": {
+      "sha256": "6841116b355ef48979103882b377e78a11c44e97f40798ce293095a7cddbb993",
+      "bytes": 2924
+    },
+    "dataset.py": {
+      "sha256": "81f41a395c93a8fefbfa6c1d450ea08dc1bcda04e72fb3890b6d050fd3fd9911",
+      "bytes": 12397
+    },
+    "prepare_data.py": {
+      "sha256": "c044383e203a51aaa8fb1e3491d50d1b42f3ea8162aebfae5d5fa8f51bcb08ee",
+      "bytes": 2530
+    },
+    "hand_features.py": {
+      "sha256": "bb9e8e95a56e06715fa48a90d3536bcb9fa95691b0d9928dd120f2baca1ae620",
+      "bytes": 1854
+    },
+    "collect_data.py": {
+      "sha256": "95031ac25ad470647eb2e2ae20c4113dbc4c73616cb307dbc2bff6cd30b1a67d",
+      "bytes": 14818
+    },
+    "make_training_bundle.py": {
+      "sha256": "5e2e63b887cb438126f2a745553143fc686e85d86369aee7c11bc554c3fa7aa5",
+      "bytes": 5822
+    },
+    "config.json": {
+      "sha256": "0bb527ad9285f0572f6d17da1008427ee1d5993766e74a866d690cdb1485a131",
+      "bytes": 875
+    },
+    "requirements-training.txt": {
+      "sha256": "a752ddecbd0384893bf66ff30a6cc140a98eb555547f38525530506de1aae4d3",
+      "bytes": 266
+    },
+    "README.md": {
+      "sha256": "c360b8337450f29b6b3d9af84fc32a9c4dbd00975285b4c4b81dea8f8e4de798",
+      "bytes": 5422
+    },
+    "P4_TRAINING.md": {
+      "sha256": "a69b80b1819e4a50b98b2b30386c97743146c276b02f1c0910fffc10cbb4e1ae",
+      "bytes": 7242
+    },
+    "DESKTOP_TRAINING.md": {
+      "sha256": "a010432ed99e0fe2d0cc2a9b9ce0383320eb833ca24b15d72df54d5961b2a47e",
+      "bytes": 5848
+    },
+    "GESTUREPILOT_MOTHER.md": {
+      "sha256": "1062a7372d0d35869e7a079312d2785e7d24d02bb35bc5c7349ed3fea8c427bf",
+      "bytes": 85272
+    },
+    "tests/test_behavior.py": {
+      "sha256": "d86eb4b740981c991f114f7132639fdbd010d89a7d25d66ca4ae8b5bc57d2338",
+      "bytes": 5870
+    },
+    "tests/test_dataset.py": {
+      "sha256": "aa5dca7ac38243a72a0d4f6c069aae6aae15acc13a810bc5fbca3719abbc3e86",
+      "bytes": 7952
+    },
+    "tests/test_training.py": {
+      "sha256": "3c8903b6522e3fcfea12ecaabd96af3c1906d4bd2bdc593559b41cc27428cc0c",
+      "bytes": 6801
+    },
+    "tests/test_bundle.py": {
+      "sha256": "3eb6d188d92070595a7191524bb4b97f06da7e81caaf5a0880ae66ba2180d04a",
+      "bytes": 3894
+    },
+    "data/samples.csv": {
+      "sha256": "a10f2967aedcdcb37801aded40a3504151a8b447e1f937f72ff72e96f8f00d6d",
+      "bytes": 1288384
+    },
+    "data/samples.metadata.json": {
+      "sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "bytes": 248
+    },
+    "data/split_manifest.json": {
+      "sha256": "ad78df91c69fcd82fb724c249644f97dd2a0f91f2bf8c9c133ce29a25bd44d53",
+      "bytes": 69829
+    },
+    "requirements.lock.txt": {
+      "sha256": "96ddd9bdb6889171b8582f6b3b381398dcec036fa0ee388838c24667291f3f8c",
+      "bytes": 793
+    }
+  },
+  "excluded": [
+    ".venv",
+    "debug recordings",
+    "camera model asset",
+    "images/video",
+    "caches",
+    "old reports/checkpoints"
+  ]
+}

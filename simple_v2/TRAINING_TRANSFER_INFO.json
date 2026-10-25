@@ -1,0 +1,179 @@
+{
+  "destination": "V:\\Projects\\GesturePilot\\simple_v2",
+  "dataset_sha256": "4ca0275f8bc4aaf1c171ca1ed5dda1f4a629113602ade0fd2637f575b2708dc4",
+  "total_rows": 1200,
+  "split_row_counts": {
+    "train": 720,
+    "validation": 240,
+    "test": 240
+  },
+  "split_sessions": {
+    "train": [
+      "s01",
+      "s02",
+      "s03",
+      "idx_train01",
+      "idx_train02",
+      "idx_train03"
+    ],
+    "validation": [
+      "s04",
+      "idx_val01"
+    ],
+    "test": [
+      "simple_test01"
+    ]
+  },
+  "class_labels": [
+    "neutral",
+    "next",
+    "previous",
+    "blackout"
+  ],
+  "gesture_poses": {
+    "neutral": "open_palm",
+    "next": "index_up",
+    "previous": "v_sign",
+    "blackout": "closed_fist"
+  },
+  "raw_sources": {
+    "baseline": {
+      "csv_path": "data/samples.csv",
+      "csv_sha256": "a10f2967aedcdcb37801aded40a3504151a8b447e1f937f72ff72e96f8f00d6d",
+      "metadata_sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "row_count": 1500
+    },
+    "index_up": {
+      "csv_path": "data/index_up_v2.csv",
+      "csv_sha256": "b5d5be4e87c23193458c2feaa936fd1a626052ab04c00a1281940052673e6c80",
+      "metadata_sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "row_count": 240
+    },
+    "fresh_test": {
+      "csv_path": "data/simple_test_v2.csv",
+      "csv_sha256": "af003a9df97dffebb08dad27245fdc365fa8c70d83640556897ad02243c17d55",
+      "metadata_sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "row_count": 240
+    }
+  },
+  "reused_baseline_rows": 720,
+  "new_index_rows": 240,
+  "fresh_test_rows": 240,
+  "created_at_utc": "2026-10-23T15:05:45.434503+00:00",
+  "gesture_set_version": "simple_index_v2",
+  "files": {
+    "config.json": {
+      "sha256": "15d4eda1fc0603d396ae6f7611c164e13173af3f5214ee6891a9f55e816cbead",
+      "bytes": 1232
+    },
+    "hand_features.py": {
+      "sha256": "99f519893dccba54a23c32b1b75686fcacd543a9eac4f76ed65d691519b4801c",
+      "bytes": 1995
+    },
+    "camera_drawing.py": {
+      "sha256": "d3a91094093baa1f3da43089a18b0655d526d8e200bf045f89d96dd551719e5d",
+      "bytes": 908
+    },
+    "dataset.py": {
+      "sha256": "f15edcc3118d50609adcab36b9b3a77a92d813e811b7da1d04e394bb716aee2c",
+      "bytes": 15202
+    },
+    "model.py": {
+      "sha256": "b151503cb504bc384fdf926ff78eb4db750215b9d9c94d1ec795d98f96a71b55",
+      "bytes": 1666
+    },
+    "train.py": {
+      "sha256": "8fec51d0d463b32496ef8695fe35f1db8f5c20fe1cadbf462383672c01aa7328",
+      "bytes": 8847
+    },
+    "evaluate.py": {
+      "sha256": "3d445c26116d6b8725cb3041ffa9564dd34280c2dd7a671aea0aba01f882f2b4",
+      "bytes": 5281
+    },
+    "training_utils.py": {
+      "sha256": "9fd88f8dc6dc6e58a27fad238d806495542b08832a3fd887cd06ba53d07930a2",
+      "bytes": 4920
+    },
+    "reporting.py": {
+      "sha256": "3cd44081870f2d8813ee7bb0b64faac1bfbc9207b52e0afbdc6645bd310f2009",
+      "bytes": 3036
+    },
+    "app.py": {
+      "sha256": "deb1c0dca99eb111698f259c0b4eccf9997e9e19ff241fddac2e2997853371fb",
+      "bytes": 11935
+    },
+    "live_utils.py": {
+      "sha256": "1b02cbb840cbdfa908f3da4f73f3340e7b8800b547348863320119e110813db5",
+      "bytes": 4242
+    },
+    "prepare_data.py": {
+      "sha256": "1ced7343c831b5f25859426bf437ef17a5843afcbb71ed136834202194591252",
+      "bytes": 2534
+    },
+    "prepare_simple_v2.py": {
+      "sha256": "98c60b926bb106f3b069fba924c3abbb78d506331d8d703a39723cddff032075",
+      "bytes": 2049
+    },
+    "data_migration.py": {
+      "sha256": "accda63d0117be29737f0bdfb4b96ab64c75f6ab2bbdc734f24825d42c40b388",
+      "bytes": 10182
+    },
+    "package_utils.py": {
+      "sha256": "5751cf3b2215a7e53a4a41d291b2fada998345d9737f20feeb9e8dbf41efd199",
+      "bytes": 4234
+    },
+    "make_demo_bundle.py": {
+      "sha256": "37dded2766bc16b96ababad89c654eb101a16775d9be5a4f672fbb5f39688bef",
+      "bytes": 3941
+    },
+    "requirements-training.txt": {
+      "sha256": "a752ddecbd0384893bf66ff30a6cc140a98eb555547f38525530506de1aae4d3",
+      "bytes": 266
+    },
+    "README.md": {
+      "sha256": "d89535382e7f7268120f8ecf5caab38a6ccbdf670ab51aadfa4a8ce1fda48c0d",
+      "bytes": 6705
+    },
+    "GESTUREPILOT_MOTHER.md": {
+      "sha256": "0d799aeb5d3607a6a031fb424097e1fd1782ece3bbf525c0b9ccd74ca971faf2",
+      "bytes": 130959
+    },
+    "tests/test_pipeline.py": {
+      "sha256": "46fee7590da0040f55e3165ebd08a8cf73c97fe0cf2cad5a968a2f5a84227cfb",
+      "bytes": 15133
+    },
+    "tests/test_training.py": {
+      "sha256": "b78361cb8b9967b18720fa4a526a5a80379a1c31c0b31d26cdafb9e7700b2bed",
+      "bytes": 6973
+    },
+    "tests/test_live.py": {
+      "sha256": "7e6d6fc6d864c6982ad3c23dd57ae32e76050361f8f25156df4a706a0ff395cf",
+      "bytes": 8968
+    },
+    "data/samples.csv": {
+      "sha256": "4ca0275f8bc4aaf1c171ca1ed5dda1f4a629113602ade0fd2637f575b2708dc4",
+      "bytes": 1034259
+    },
+    "data/samples.metadata.json": {
+      "sha256": "e583a192a7d6301503dba42e76b0b5d365a185e6058522652fd813abc8bd6db3",
+      "bytes": 1366
+    },
+    "data/lineage.json": {
+      "sha256": "8521f5dec2d87bd22a66b49f20b71f355434e486d8071a5ea4cde0ae5bd74813",
+      "bytes": 207809
+    },
+    "data/split_manifest.json": {
+      "sha256": "922152ba9172dbe00e4c4efb8acc731ee858fb5062bf47f07b0699a0536412b0",
+      "bytes": 57840
+    }
+  },
+  "excluded": [
+    ".venv",
+    "camera model",
+    "raw capture source CSVs",
+    "old models/reports",
+    "debug data",
+    "images/video",
+    "caches"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "feature_version": "world_wrist_palm_v1",
+  "class_labels": [
+    "neutral",
+    "next",
+    "previous",
+    "blackout"
+  ],
+  "physical_hand": "right",
+  "camera_index": 0,
+  "input_orientation": "unflipped_camera",
+  "gesture_set_version": "simple_index_v2",
+  "gesture_poses": {
+    "neutral": "open_palm",
+    "next": "index_up",
+    "previous": "v_sign",
+    "blackout": "closed_fist"
+  },
+  "raw_sources": {
+    "baseline": {
+      "csv_path": "data/samples.csv",
+      "csv_sha256": "a10f2967aedcdcb37801aded40a3504151a8b447e1f937f72ff72e96f8f00d6d",
+      "metadata_sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "row_count": 1500
+    },
+    "index_up": {
+      "csv_path": "data/index_up_v2.csv",
+      "csv_sha256": "b5d5be4e87c23193458c2feaa936fd1a626052ab04c00a1281940052673e6c80",
+      "metadata_sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "row_count": 240
+    },
+    "fresh_test": {
+      "csv_path": "data/simple_test_v2.csv",
+      "csv_sha256": "af003a9df97dffebb08dad27245fdc365fa8c70d83640556897ad02243c17d55",
+      "metadata_sha256": "3fe97a8aa389f5191cf45077af2da9aec10aed3a19e2dbb872bfc9c6da95ed28",
+      "row_count": 240
+    }
+  },
+  "lineage_sha256": "8521f5dec2d87bd22a66b49f20b71f355434e486d8071a5ea4cde0ae5bd74813"
+}

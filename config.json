@@ -1,0 +1,28 @@
+{
+  "feature_version": "world_wrist_palm_v1",
+  "class_labels": ["neutral", "next", "previous", "blackout", "start"],
+  "camera_index": 0,
+  "working_hand": "right",
+  "input_orientation": "unflipped_camera",
+  "preview_mirrored": true,
+  "model_path": "models/hand_landmarker.task",
+  "dataset_path": "data/samples.csv",
+  "split_sessions": {"train": ["s01", "s02", "s03"], "validation": ["s04"], "test": ["s05"]},
+  "training": {
+    "seed": 42,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "max_epochs": 100,
+    "patience": 10,
+    "num_threads": 1,
+    "device": "cpu"
+  },
+  "controller": {
+    "score_threshold": 0.85,
+    "gesture_hold_seconds": 0.5,
+    "neutral_hold_seconds": 0.3,
+    "minimum_action_interval_seconds": 0.8,
+    "arming_countdown_seconds": 5.0,
+    "shortcuts": {"next": "right", "previous": "left", "blackout": "b", "start": "f5"}
+  }
+}

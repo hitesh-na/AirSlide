@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+reports/
+*.zip
+.env*
+GESTUREPILOT_MOTHER.md
