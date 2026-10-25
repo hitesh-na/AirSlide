@@ -1,0 +1,7 @@
+# Preserve the original bytes required by the trained checkpoint and saved hashes.
+# Disable Git newline conversion for these files in both the index and checkouts.
+palm_v3/data/samples.csv -text
+palm_v3/data/samples.metadata.json -text
+palm_v3/data/lineage.json -text
+palm_v3/diagnostic_inputs/vsign_development.csv -text
+palm_v3/data/split_manifest.json -text
