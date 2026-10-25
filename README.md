@@ -8,6 +8,7 @@ The active version is in **`palm_v3/`**. Older root-level scripts and `simple_v2
 
 [Setup](#1-set-up-python) · [Gestures](#gesture-controls) · [Real control](#5-control-your-presentation) · [Troubleshooting](#reports-and-troubleshooting)
 
+Before running this project, please open this image to check how the tool looks and to understand its features (https://github.com/hitesh-na/AirSlide/blob/main/Interface%20Overview.png)
 ## Before you start
 
 You need:
@@ -17,6 +18,7 @@ You need:
 - A working webcam, with camera access enabled for desktop apps.
 - The **desktop Microsoft PowerPoint app**, running on the same computer as AirSlide.
 - The compatible trained AirSlide model and its matching dataset files, listed below.
+  
 
 A GPU is not required. The supplied control backend targets PowerPoint's slideshow window; PowerPoint in a browser, Google Slides, macOS, and Linux presentation control are not supported by this implementation.
 
