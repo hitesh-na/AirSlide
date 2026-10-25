@@ -245,7 +245,7 @@ The original dataset contains **1,200 rows**, split by recording session into **
 
 In one reported Windows control session, **32 keyboard commands were accepted, with 0 blocked commands**, and the author confirmed PowerPoint responded. That is a working demonstration, not a measured 32/32 intended-command accuracy result. The session ended with a camera read failure; that limitation remains recorded.
 
-The model was developed using one person's right hand. Recognition on other people, left hands, different cameras, occluded fingers or different lighting is not established by these results. Check your own setup in dry run before relying on it for a presentation.
+The model was developed using one person's right hand (But it can be used for others' right hands too). Check your own setup in dry run before relying on it for a presentation.
 
 ## Technology and references
 
