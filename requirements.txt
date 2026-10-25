@@ -1,0 +1,9 @@
+# AirSlide dependencies matching requirements.lock.txt.
+# Install CPU PyTorch separately first, as described in README.md:
+# python -m pip install torch==2.14.1+cpu --index-url https://download.pytorch.org/whl/cpu
+mediapipe==1.1.1
+opencv-contrib-python==5.0.0.93
+numpy==2.4.6
+scikit-learn==1.9.1
+matplotlib==3.11.2
+pyautogui==0.9.54
